@@ -49,5 +49,9 @@ class Like(models.Model):
     class Meta:
         unique_together = ('post', 'user')
 
+    def __str__(self):
+        return 'Like: ' + self.user.username + ' likes ' + self.post.title
+    
+
     
 

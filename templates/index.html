@@ -7,19 +7,20 @@
     {% for post in object_list %}
         <div class="row">
             <div class="card view-update {{ post.pk }}">
-                {% comment %} <div class="card__panel-head">
+                <div class="card__panel-head">
                     <div class="poster__info">
-                        <a href="{% url 'profile' post.author.pk %}" class="poster__name">
+                        <a href="test" class="poster__name">
                             {% if post.author.profile_pic %}
                                 <img class="poster__profilepic" src="{{ post.author.profile_pic.url }}">
                             {% endif %}
                             {{ post.author.username }}
                         </a>
-                        <span class="poster__timestamp">
+                        {% comment %} <span class="poster__timestamp">
                             {{ post.posted_on|timesince }}
-                        </span>
+                        </span> {% endcomment %}
                     </div>
-                </div> {% endcomment %}
+                </div> 
+
                 <a href="{% url 'post_detail' post.pk %}">
                     <img class="card__main-image" src="{{ post.image }}">
                 </a>
